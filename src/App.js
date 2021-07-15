@@ -18,6 +18,7 @@ import About from './about';
 import Faqs from './faqs';
 import Login from './login';
 import Signup from './signup';
+import Resetpwd from './resetpwd';
 
 class App extends React.Component {
    constructor(props) {
@@ -76,6 +77,7 @@ class App extends React.Component {
                   <Route exact path='/pricing' component={Pricing}></Route>
                   <Route exact path='/faqs' component={Faqs}></Route>
                   <Route exact path='/about' component={About}></Route>
+                  <Route exact path='/resetpwd' component={Resetpwd}></Route>
                 </Switch>
                 
               </section>
