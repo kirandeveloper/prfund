@@ -19,12 +19,16 @@ class Home extends React.Component {
          products4: null
       }
 
-      this.columns = [
-         { field: 'code', header: 'Code' },
-         { field: 'name', header: 'Name' },
-         { field: 'quantity', header: 'Quantity' },
-         { field: 'price', header: 'Price' }
-     ];
+      this.myfund={
+         "datafund": [
+             {"name": "BigFund","marketcap": "f230fh0g3","price": "$100"},
+             {"name": "Pridevel GenIndex","marketcap": "e530fh0g4","price": "$200"}
+         ],
+         "datainvesment": [
+            {"name": "BigFund","marketcap": "f230fh0g3","price": "$100"},
+            {"name": "Pridevel GenIndex","marketcap": "e530fh0g4","price": "$200"}
+        ],
+     }
 
       this.onremeChange = this.onremeChange.bind(this);
    };
@@ -123,52 +127,20 @@ class Home extends React.Component {
                   <Button label="Invest" className="p-button-info p-col-12 p-mt-3" />
                </div>
                <div className="p-field p-col-6  p-md-6">
-                  <table class="table">
-                     <thead>
-                        <tr>
-                           <th>Name</th>
-                           <th>Market Cap</th>
-                           <th>Price</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>BigFund</td>
-                           <td>$123456789</td>
-                           <td><strong>$376.94</strong></td>
-                        </tr>
-                        <tr>
-                           <td>Pridevel GenIndex</td>
-                           <td>$123456789</td>
-                           <td><strong>$376.94</strong></td>
-                        </tr>
-                     </tbody>
-                  </table> 
+                   <DataTable value={this.myfund.datafund}>
+                        <Column field="name" header="Name"></Column>
+                        <Column field="marketcap" header="MarketCap"></Column>
+                        <Column field="price" header="Price"></Column>
+                  </DataTable>
                   <div className="p-field p-col-6 p-md-6">
                      <h4>My Investmemt</h4>
                   </div>    
                   <div className="p-field p-col-12  p-md-12">
-                  <table class="table">
-                     <thead>
-                        <tr>
-                           <th>Name</th>
-                           <th>Market Cap</th>
-                           <th>Price</th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>BigFund</td>
-                           <td>$123456789</td>
-                           <td><strong>$376.94</strong></td>
-                        </tr>
-                        <tr>
-                           <td>Pridevel GenIndex</td>
-                           <td>$123456789</td>
-                           <td><strong>$376.94</strong></td>
-                        </tr>
-                     </tbody>
-                  </table>
+                     <DataTable value={this.myfund.datainvesment}>
+                        <Column field="name" header="Name"></Column>
+                        <Column field="marketcap" header="MarketCap"></Column>
+                        <Column field="price" header="Price"></Column>
+                     </DataTable>
                  </div>             
                </div>
             </section>
