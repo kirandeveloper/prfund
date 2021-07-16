@@ -2,13 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Home from './home'; 
-import Feature from './feature'; 
-import Pricing from './pricing'; 
-import Faqs from './faqs'; 
-import About from './about'; 
-
 import reportWebVitals from './reportWebVitals';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 ReactDOM.render(
   <React.StrictMode>
