@@ -71,81 +71,91 @@ class AuthnForm extends Component{
   render (){
     const mode = this.props.mode;
     return (
-      <div className='p-field p-col-6 p-md-6 p-mt-5'>
-      <div className='card'>
-
-        <div className='p-grid p-mt-2 p-m-0'>
-          <div className='p-col'>
-            <div className='box'>
-              <InputText
-                id='emailaddress'
-                value={this.state.username}
-                onChange={(e) => this.setState({username:e.target.value})}
-                placeholder='Email address'
-                type='text'
-                />
-            </div>
-          </div>
-        </div>
-        
-        {mode!=='resetpwd' &&
-          <div className='p-grid p-mt-2 p-m-0'>
-          <div className='p-col'>
-            <div className='box'>
-              <InputText
-                id='password'
-                value={this.state.password}
-                onChange={(e) => this.setState({ password:e.target.value })}
-                placeholder='Password'
-                type='password'
-                />
-            </div>
-          </div>
-        </div>}
-        
-        { mode ==='signup' &&
+      <div className='p-field p-col-6 p-md-6 p-mt-5 authpght'>
+        <div className='card'>
           <div className='p-grid p-mt-2 p-m-0'>
             <div className='p-col'>
               <div className='box'>
                 <InputText
-                  id='repassword'
-                  value={this.state.repassword}
-                  onChange={(e) => this.setState({repassword:e.target.value})}
-                  placeholder='Re-enter Password'
-                  type='password'
-                  />
+                  id='emailaddress'
+                  value={this.state.username}
+                  onChange={(e) => this.setState({ username: e.target.value })}
+                  placeholder='Email address'
+                  type='text'
+                />
               </div>
             </div>
           </div>
-        }
-        
-        { mode ==='login' &&
-          <div>
-            <Checkbox
-              inputId='chkreme'
-              onChange={() => this.setState({chkreme:!this.state.chkreme})}
-              checked={this.state.chkreme}/>
-            <label htmlFor='chkreme' className='p-ml-2'>
-              Remember Me
-            </label>
-          </div>
-        }
-        
-        <Button
-          label= {mode==='login'?'Login':mode==='signup'?'Sign Up' : 'Reset Password'}
-          onClick={() => this.authorize()}
-          className='p-button-info p-mt-2'
+
+          {mode !== 'resetpwd' && (
+            <div className='p-grid p-mt-2 p-m-0'>
+              <div className='p-col'>
+                <div className='box'>
+                  <InputText
+                    id='password'
+                    value={this.state.password}
+                    onChange={(e) =>
+                      this.setState({ password: e.target.value })
+                    }
+                    placeholder='Password'
+                    type='password'
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {mode === 'signup' && (
+            <div className='p-grid p-mt-2 p-m-0'>
+              <div className='p-col'>
+                <div className='box'>
+                  <InputText
+                    id='repassword'
+                    value={this.state.repassword}
+                    onChange={(e) =>
+                      this.setState({ repassword: e.target.value })
+                    }
+                    placeholder='Re-enter Password'
+                    type='password'
+                  />
+                </div>
+              </div>
+            </div>
+          )}
+
+          {mode === 'login' && (
+            <div className='loginchk'>
+              <Checkbox
+                inputId='chkreme'
+                onChange={() => this.setState({ chkreme: !this.state.chkreme })}
+                checked={this.state.chkreme}
+              />
+              <label htmlFor='chkreme' className='p-ml-2'>
+                Remember Me
+              </label>
+            </div>
+          )}
+
+          <Button
+            label={
+              mode === 'login'
+                ? 'Login'
+                : mode === 'signup'
+                ? 'Sign Up'
+                : 'Reset Password'
+            }
+            onClick={() => this.authorize()}
+            className='p-button-info p-mt-2'
           />
 
-        { mode ==='login' &&
-          <small>
-            <a href='/resetpwd'> Forgot Password?</a>
-          </small>
-        }
-
+          {mode === 'login' && (
+            <small className='loginfgtpwd'>
+              <a href='/resetpwd'> Forgot Password?</a>
+            </small>
+          )}
+        </div>
       </div>
-    </div>
-  );
+    );
 }
 }
 

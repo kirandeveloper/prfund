@@ -4,6 +4,7 @@ import 'primereact/resources/themes/saga-green/theme.css';
 import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import { Menubar } from 'primereact/menubar';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -65,41 +66,58 @@ class App extends React.Component {
       <Router>
         <div className='App'>
           <header className='p-grid p-m-0'>
-            <div className='p-field p-col-10 p-md-8'>
-              <Menubar model={items} />
-            </div>
-            <div className='p-field p-col-2 p-md-4 logintopbtn'>
-              <Button
-                label='Login'
-                onClick={() => {
-                  window.location = '/login';
-                }}
-                className='p-button-info p-col-3 p-mt-21'
-              />
-              <Button
-                label='Sign-up'
-                onClick={() => {
-                  window.location = '/signup';
-                }}
-                className='p-button-info p-mt-2 p-ml-2 p-col-3'
+            <div className='p-field p-col-12 p-md-12'>
+              <Menubar
+                model={items}
+                end={
+                  <div>
+                    <Button
+                      label='Login'
+                      onClick={() => {
+                        window.location = '/login';
+                      }}
+                      className='p-button-info p-col-3 '
+                      id='btnlogin'
+                    />
+                    <Button
+                      label='Sign-up'
+                      onClick={() => {
+                        window.location = '/signup';
+                      }}
+                      className='p-button-info p-ml-2 p-col-3'
+                      id='btnsignup'
+                    />
+                  </div>
+                }
               />
             </div>
           </header>
           <section className='p-grid p-m-0'>
             <Switch>
-              <Route exact path='/login'> <AuthnPage mode='login' /> </Route>
-              <Route exact path='/signup'> <AuthnPage mode='signup'/> </Route>
-              <Route exact path='/resetpwd' > <AuthnPage mode='resetpwd'/> </Route>
+              <Route exact path='/login'>
+                {' '}
+                <AuthnPage mode='login' />{' '}
+              </Route>
+              <Route exact path='/signup'>
+                {' '}
+                <AuthnPage mode='signup' />{' '}
+              </Route>
+              <Route exact path='/resetpwd'>
+                {' '}
+                <AuthnPage mode='resetpwd' />{' '}
+              </Route>
               <Route exact path='/home' component={Home} />
               <Route exact path='/feature' component={Feature} />
               <Route exact path='/pricing' component={Pricing} />
               <Route exact path='/faqs' component={Faqs} />
               <Route exact path='/about' component={About} />
               <Route exact path='/createset' component={CreateSetPages} />
-              
             </Switch>
           </section>
-          <footer className='textcenter'> PrideVel Business Solutions LCC </footer>
+          <footer className='textcenter'>
+            {' '}
+            PrideVel Business Solutions LCC{' '}
+          </footer>
         </div>
       </Router>
     );
