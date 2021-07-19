@@ -69,7 +69,7 @@ const Create = (props) => {
       <div className='p-field p-col-12 p-md-12'>
         <Button
           label='Passive Fund'
-          className='p-button p-component p-button-info p-col-4 p-mt-2'
+          className='p-button p-component p-button-info p-col-3 p-mt-2'
         />
         <Button
           label='Active Fund'
@@ -77,7 +77,7 @@ const Create = (props) => {
         />
         <Button
           label='Quant Fund'
-          className='p-button p-component p-button-warning p-col-4 p-mt-2 p-ml-1'
+          className='p-button p-component p-button-warning p-col-3 p-mt-2 p-ml-1'
         />
       </div>
     </div>

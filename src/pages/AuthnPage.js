@@ -7,7 +7,7 @@ const AuthnPage = (props) => {
   return (
     <section className='p-grid p-m-0'>
       <Landing />
-      <AuthnForm mode={this.props.mode} />
+      <AuthnForm mode={props.mode} />
     </section>
   );
 }

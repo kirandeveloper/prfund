@@ -36,6 +36,10 @@ input[type='password'] {
 input[type='password'] {
   width: 100%;
 }
+.textgray
+{
+  color: #9c9c9c;
+}
 .loginchk {
   padding-left: 10px;
 }
@@ -203,13 +207,7 @@ footer {
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
-  #btnlogin {
-    width: 100%;
-  }
-  #btnsignup {
-    width: 100%;
-    right: 115%;
-  }
+  
 }
 
 /* Smartphones (portrait) ----------- */

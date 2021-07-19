@@ -3,8 +3,9 @@ import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
 import Fees from '../components/Fees';
-// import Tokens from '../component/Tokens';
-// import Customize from '../component/Customize';
+import Token from '../components/Token';
+import Customize from '../components/Customize';
+import Publish from '../components/Publish';
 import Create from '../components/Create';
 
 class InitSteps extends React.Component {
@@ -30,14 +31,8 @@ class InitSteps extends React.Component {
       publishCheckbox:false,
     };
 
-    this.componentPages = [
-      <Create state={this.state} onChange={() => this.setState} />,
-      <Fees state={this.state} onChange={() => this.setState} />,
-    //   <Tokens state={this.state} onChange={() => this.setState} />,
-    //   <Customize state={this.state} onChange={() => this.setState} />,
-    //   <Publish state={this.state} onChange={() => this.setState} />,
-    ];
-
+    this.setState = this.setState.bind(this);
+    
     this.items = [
       {
         label: 'Create',
@@ -73,6 +68,16 @@ class InitSteps extends React.Component {
   }
 
   render() {
+
+    this.componentPages = [
+      <Create state={this.state} onChange={this.setState} />,
+      <Fees state={this.state} onChange={this.setState} />,
+      <Token state={this.state} onChange={this.setState} />,
+      <Customize state={this.state} onChange={this.setState} />,
+      <Publish state={this.state} onChange={this.setState} />,
+    ];
+    
+
     return (
       <div className='cfund-main'>
         <section>
