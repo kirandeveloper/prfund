@@ -2,19 +2,16 @@ import React from 'react';
 import 'primeflex/primeflex.css';
 import { Button } from 'primereact/button';
 import { Steps } from 'primereact/steps';
-
-// import Fees from '../component/Fees';
+import Fees from '../components/Fees';
 // import Tokens from '../component/Tokens';
 // import Customize from '../component/Customize';
-// import Create from '../components/Create';
+import Create from '../components/Create';
 
-
-// REFER ./CreateSetPage.js Instead
-class CreateFundsPages extends React.Component {
+class InitSteps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 0,
+      activeIndex: 1,
       createName:'',
       createSymbol:'',
       createStartingPrice:0,
@@ -25,6 +22,7 @@ class CreateFundsPages extends React.Component {
       feesManagement:0,
       feesMining:false,
       tokenSearch:'',
+      tokenSelectedCountries:'',
       tokenList:{},
       customizeFundCreator:'',
       customizeFundLogo:'',
@@ -32,13 +30,13 @@ class CreateFundsPages extends React.Component {
       publishCheckbox:false,
     };
 
-    // this.componentPages = [
-    //   <Create state={this.state} onChange={() => this.setState} />,
-    //   <Fees state={this.state} onChange={() => this.setState} />,
+    this.componentPages = [
+      <Create state={this.state} onChange={() => this.setState} />,
+      <Fees state={this.state} onChange={() => this.setState} />,
     //   <Tokens state={this.state} onChange={() => this.setState} />,
     //   <Customize state={this.state} onChange={() => this.setState} />,
     //   <Publish state={this.state} onChange={() => this.setState} />,
-    // ];
+    ];
 
     this.items = [
       {
@@ -79,8 +77,6 @@ class CreateFundsPages extends React.Component {
       <div className='cfund-main'>
         <section>
           <div className='steps-demo'>
-            {/* <Toast ref={(el) => { this.toast = el }}></Toast> */}
-
             <div className='card'>
               <Steps
                 model={this.items}
@@ -91,7 +87,11 @@ class CreateFundsPages extends React.Component {
             </div>
           </div>
         </section>
+
+
         {this.componentPages[this.state.activeIndex]}
+        
+        
         <div className='p-field p-col-12 p-md-12 p0 m0'>
           <Button
             label='Back'
@@ -123,4 +123,4 @@ class CreateFundsPages extends React.Component {
     );
   }
 }
-export default CreateFundsPages;
+export default InitSteps;

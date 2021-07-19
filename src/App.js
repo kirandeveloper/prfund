@@ -18,6 +18,7 @@ import CreateFundsPage from './pages/CreateFundsPage';
 import CreateFPFees from './pages/CreateFPFees';
 import AddTokens from './pages/AddTokens';
 import Customize from './pages/Customize';
+import CreateSetPages from './pages/CreateSetPage';
 
 
 class App extends React.Component {
@@ -94,11 +95,7 @@ class App extends React.Component {
               <Route exact path='/pricing' component={Pricing} />
               <Route exact path='/faqs' component={Faqs} />
               <Route exact path='/about' component={About} />
-              <Route exact path='/createfunds' component={CreateFunds} />
-              <Route exact path='/createfundspage' component={CreateFundsPage} />
-              <Route exact path='/createfpfees' component={CreateFPFees} />
-              <Route exact path='/AddTokens' component={AddTokens} />
-              <Route exact path='/Customize' component={Customize} />
+              <Route exact path='/createset' component={CreateSetPages} />
               
             </Switch>
           </section>
