@@ -288,11 +288,26 @@ footer {
     width: 100%;
     right: 115%;
   }
+  .cfund-main
+  {
+    width: 95%;
+  }
+  .p-col-3 {
+    width: 100%;
+  }
+  .p-col-6 {
+    width: 100%;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen and (min-width: 321px) {
-  
+   .p-col-3 {
+    width: 100%;
+  }
+  .p-col-6 {
+    width: 100%;
+  }
 }
 
 /* Smartphones (portrait) ----------- */
@@ -304,6 +319,16 @@ footer {
     width: 100%;
     right: 115%;
   }
+  .cfund-main
+  {
+    width: 95%;
+  }
+  .p-col-3 {
+    width: 100%;
+  }
+  .p-col-6 {
+    width: 100%;
+  }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -314,6 +339,12 @@ footer {
   #btnsignup {
     width: 100%;
     right: 115%;
+  }
+  .p-col-3 {
+    width: 100%;
+  }
+  .p-col-6 {
+    width: 100%;
   }
 }
 
