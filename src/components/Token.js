@@ -45,45 +45,32 @@ const Token = (props) => {
               <ListBox value={props.state.selectedCountries} options={tokens} onChange={(e) => props.onChange({ selectedCountries: e.value })} multiple filter optionLabel="name"
                   itemTemplate={countryTemplate} style={{  }} listStyle={{ maxHeight: '250px' }} />
           </div>
-          <div>
-            <table class="table p-mt-5">
-              <thead class="thead-light">
-                <tr>
-                  <th>Tokens</th>
-                  <th>Allocation</th>
-                  <th>&nbsp;</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    1X short
-                  </td>
-                  <td>
-                      <InputText className='input100' value={props.state.value1} onChange={(e) => props.onChange({ value1: e.target.value })} />
-                      <Slider value={props.state.value1} onChange={(e) => props.onChange({ value1: e.value })} />
-                      
-                  </td>
-                  <td>
-                      <Button label="Remove" className="p-button-danger tbtnsm" />
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                      1X short
-                  </td>
-                  <td>
-                      <InputText className='input100' value={props.state.value2} onChange={(e) => props.onChange({ value2: e.target.value })} />
-                      <Slider value={props.state.value2} onChange={(e) => props.onChange({ value2: e.value })} />
-                      
-                  </td>
-                  <td>
-                      <Button label="Remove" className="p-button-danger tbtnsm" />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <section className="p-mt-4">
+            <div className="p-grid gridheader">
+              <div className="p-col-4"><strong>Tokens</strong></div>
+              <div className="p-col-6 textleft"><strong>Allocation</strong></div>
+            </div>
+            <div className="p-grid">
+              <div className="p-col">1X short</div>
+              <div className="p-col">
+                <InputText className='input100' value={props.state.value1} onChange={(e) => props.onChange({ value1: e.target.value })} />
+                <Slider value={props.state.value1} onChange={(e) => props.onChange({ value1: e.value })} />                
+              </div>
+              <div className="p-col text-right">
+                <Button label="Remove" className="p-button-danger tbtnsm" />
+              </div>
+            </div>
+            <div className="p-grid">
+              <div className="p-col">1X short</div>
+              <div className="p-col">
+                <InputText className='input100' value={props.state.value2} onChange={(e) => props.onChange({ value2: e.target.value })} />
+                <Slider value={props.state.value2} onChange={(e) => props.onChange({ value2: e.value })} />                
+              </div>
+              <div className="p-col text-right">
+                <Button label="Remove" className="p-button-danger tbtnsm" />
+              </div>
+            </div>            
+          </section>
         </div>
      </div>
     )

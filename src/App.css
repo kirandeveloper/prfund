@@ -21,6 +21,12 @@ button {
 .textcenter {
   text-align: center;
 }
+.textleft {
+  text-align: left;
+}
+.text-right{
+  text-align: right;
+}
 .logintopbtn {
   margin-top: -18px;
 }
@@ -33,6 +39,12 @@ button {
 .card
 {
   padding-bottom: 3px;
+}
+
+.gridheader
+{
+  background-color: #e6e6e6;
+  border:1px solid #c0c0c0;
 }
 
 input[type='text'] {

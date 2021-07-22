@@ -11,30 +11,22 @@ const Publish = (props) => {
           <h3 className="p-mt-5">MFD</h3>
           <h5 className="textgray">MFD</h5>
           <h4>$1000</h4>
-          <table class="table p-mt-5">
-            <thead class="thead-light">
-                <tr>
-                    <th>Tokens</th>
-                    <th>Allocation</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        1X short<br/>
-                        ETHHEGRTTY
-                    </td>
-                    <td>40.00%</td>
-                </tr>
-                <tr>
-                    <td>
-                        1X short<br/>
-                        ETHHEGRTTY
-                    </td>
-                    <td>40.00%</td>
-                </tr>
-            </tbody>
-          </table>
+          <section>
+            <div className="p-grid">
+                <div className="p-col"><strong>Tokens</strong></div>
+                <div className="p-col text-right"><strong>Allocation</strong></div>
+            </div>
+            <div className="p-grid">
+                <div className="p-col">1X short<br/>
+                        ETHHEGRTTY</div>
+                <div className="p-col text-right">40.00%</div>
+            </div>
+            <div className="p-grid">
+                <div className="p-col">1X short<br/>
+                        ETHHEGRTTY</div>
+                <div className="p-col text-right">40.00%</div>
+            </div>
+          </section>
           <Button
           label='Edit Set'
           className='p-button p-component p-button-outlined p-button-secondary p-col-12 p-mt-2 p-ml-1'
