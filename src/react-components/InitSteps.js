@@ -12,7 +12,7 @@ class InitSteps extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeIndex: 1,
+      activeIndex: 0,
       createName:'',
       createSymbol:'',
       createStartingPrice:0,
@@ -100,6 +100,7 @@ class InitSteps extends React.Component {
         <div className='p-field p-col-12 p-md-12 p0 m0'>
           <Button
             label='Back'
+            id='btnback'
             onClick={() => {
               if(this.state.activeIndex<=0){
                 this.setState({activeIndex:0})

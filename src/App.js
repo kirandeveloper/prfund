@@ -15,7 +15,6 @@ import About from './pages/About';
 import Faqs from './pages/Faqs';
 import AuthnPage from './pages/AuthnPage';
 import CreateFunds from './pages/CreateFunds';
-import CreateFundsPage from './pages/CreateFundsPage';
 import CreateFPFees from './pages/CreateFPFees';
 import AddTokens from './pages/AddTokens';
 import Customize from './pages/Customize';
@@ -33,7 +32,7 @@ class App extends React.Component {
         label: 'Home',
         className: 'p-menuitem-active',
         command: () => {
-          window.location = '/home';
+          window.location = '/';
         },
       },
       {
@@ -106,11 +105,12 @@ class App extends React.Component {
                 {' '}
                 <AuthnPage mode='resetpwd' />{' '}
               </Route>
-              <Route exact path='/home' component={Home} />
+              <Route exact path='/' component={CreateFunds} />
               <Route exact path='/feature' component={Feature} />
               <Route exact path='/pricing' component={Pricing} />
               <Route exact path='/faqs' component={Faqs} />
               <Route exact path='/about' component={About} />
+              <Route exact path='/home' component={Home} />
               <Route exact path='/createset' component={CreateSetPages} />
             </Switch>
           </section>

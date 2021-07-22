@@ -27,6 +27,14 @@ button {
 .authpght {
   min-height: 420px;
 }
+.cyfpght {
+  min-height: 470px;
+}
+.card
+{
+  padding-bottom: 3px;
+}
+
 input[type='text'] {
   width: 100%;
 }
@@ -51,10 +59,18 @@ button {
   margin: 5px 10px !important;
 }
 .cfund-main {
-  width: 40%;
+  width: 43%;
   margin: 0px auto;
 }
 
+.cfund-main h2{
+  font-weight: bolder;
+}
+
+.cfund-main .p-grid
+{
+  margin: 0px 0px 10px 0px;
+}
 .cfund-main p {
   margin: 20px 0px;
 }
@@ -67,6 +83,68 @@ button {
   list-style-type: none;
   display: inline;
 }
+
+.cfund-inputtext1 {
+  margin-left: -15px;
+  width: 105% !important;
+}
+
+/* fund radio btn */
+
+.donate-now {
+  list-style-type: none;
+  margin: 25px 0 0 0;
+  padding: 0;
+}
+
+.donate-now li {
+  float: left;
+  width: 178px;
+  height: 40px;
+  position: relative;
+}
+
+.mr13
+{
+  margin-right: 13px;
+}
+
+.donate-now label,
+.donate-now input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.donate-now input[type="radio"] {
+  opacity: 0.01;
+  z-index: 100;
+}
+
+.donate-now input[type="radio"]:checked+label,
+.Checked+label {
+  background: yellow;
+}
+
+.donate-now label {
+  padding: 5px;
+  border: 1px solid #CCC;
+  cursor: pointer;
+  z-index: 90;
+}
+
+.donate-now label:hover {
+  background: #DDD;
+}
+label.p-button
+{
+  margin-left: 0rem !important;
+  line-height: 24px !important;
+}
+/* fund radio btn */
 
 #btnlogin {
   width: 30%;
@@ -98,6 +176,13 @@ button {
   color: #ffffff;
   background: #9b7fbc !important;
   border: 1px solid #9b7fbc !important;
+  width: 48%;
+  margin: 5px 0px !important;
+}
+
+#btnback
+{
+  width: 48%;
 }
 
 .btncont:hover {
