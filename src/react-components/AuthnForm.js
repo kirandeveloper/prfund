@@ -3,8 +3,6 @@ import axios from 'axios';
 import { InputText } from 'primereact/inputtext';
 import { Checkbox } from 'primereact/checkbox';
 import { Button } from 'primereact/button';
-import { Constants } from '../utils/Constants';
-
 
 class AuthnForm extends Component{
   constructor(props){
@@ -15,53 +13,60 @@ class AuthnForm extends Component{
       repassword:'',
       chkreme:false
     }
+    this.Constants = this.props.constants
+    this.nextPage = this.props?.nextpage;
   }
 
   authorize() {
     let username = this.state.username;
     let password = this.state.password;
     let url = '';
-    if (this.mode === 'signup') {
-      
-      url = Constants.BASE_URL + '/auth/register';
+    console.log('running auth');
+    if (this.props.mode === 'signup') {
+      url = this.Constants.BASE_URL + this.Constants.REGISTER;
       console.log({ username: username, password: password });
       axios
         .post(url, { username:username, password:password })
         .then((res) => {
           console.log(res.data);
           this.setState({ success: res.data.success });
+          window.location=this.nextPage || '/'
         })
         .catch((err) => {
           console.log(err);
+          this.setState({success:false, msg:'Request could not be processed'})
         });
 
-    } else if (this.mode === 'login') {
-      
+    } else if (this.props.mode === 'login') {
       console.log('login');
-      url = Constants.BASE_URL + '/auth/login';
+      url = this.Constants.BASE_URL + this.Constants.LOGIN;
       console.log({ username: username, password: password });
       axios
         .post(url, { username:username, password:password })
         .then((res) => {
           console.log(res.data);
           this.setState({ success: res.data.success });
+          window.location=this.nextPage || '/'
         })
         .catch((err) => {
           console.log(err);
+          this.setState({success:false, msg:'Request could not be processed'})
         });
 
-    } else if (this.mode === 'resetpwd') {
+    } else if (this.props.mode === 'resetpwd') {
       
-      url = Constants.BASE_URL + '/auth/resetrequest';
+      url = this.Constants.BASE_URL + this.Constants.RESET;
       console.log({ username: username });
       axios
         .post(url, { username: username })
         .then((res) => {
           console.log(res.data);
           this.setState({ success: res.data.success });
+          window.location=this.nextPage || '/'
         })
         .catch((err) => {
           console.log(err);
+          this.setState({success:false, msg:'Request could not be processed'})
         });
 
     }
